@@ -19,10 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('admin/categories', 'Admin\CategoriesController');
-Route::resource('admin/projects', 'Admin\ProjectsController');
-Route::resource('admin/pages/home', 'Admin\HomeController');
-Route::resource('admin/pages/skill', 'Admin\SkillController');
-Route::resource('admin/pages/home', 'Admin\HomeController');
-Route::resource('admin/pages/about', 'Admin\AboutController');
-Route::resource('admin/pages/contact', 'Admin\ContactController');
+
+Route::group(['middleware' => 'auth','namespace' => 'Admin','prefix' => 'admin'], function () {
+    Route::resource('categories', 'CategoriesController');
+    Route::resource('projects', 'ProjectsController');
+    Route::resource('pages/home', 'HomeController');
+    Route::resource('pages/skill', 'SkillController');
+    Route::resource('pages/home', 'HomeController');
+    Route::resource('pages/about', 'AboutController');
+    Route::resource('pages/contact', 'ContactController');
+});
+

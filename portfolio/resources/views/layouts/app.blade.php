@@ -28,10 +28,12 @@
 <body>
     <!-- partial:index.partial.html -->
     <div class="page-wrapper chiller-theme toggled">
-        @include('layouts.parts.navbar')
-
-        @include('layouts.parts.sidebar')
-
+        @if (Request::is('*login')!=true && Request::is('*reset')!=true)
+            @include('layouts.parts.navbar')
+        @endif
+        @if (Request::is('*login')!=true && Request::is('*reset')!=true)
+            @include('layouts.parts.sidebar')
+        @endif
         <main class="page-content">
             <div class="container-fluid">
 
@@ -42,7 +44,10 @@
 
         </main>
         <!-- page-content" -->
-        @include('layouts.parts.footer')
+        @if (Request::is('*login')!=true && Request::is('*reset')!=true)
+            @include('layouts.parts.footer')
+        @endif
+        
     </div>
     <!-- page-wrapper -->
     <!-- partial -->

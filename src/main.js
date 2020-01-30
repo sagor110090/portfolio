@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import jQuery from 'jquery'
+window.axios = require('axios');
 window.$ = window.jQuery  = jQuery 
 
 import VueProgressBar from 'vue-progressbar'

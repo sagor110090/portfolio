@@ -22,7 +22,7 @@ class FrontEndController extends Controller
      */
     public function home(Request $request)
     {
-        $home = Home::all();
+        $home = Home::first();
 
         return $home;
     }

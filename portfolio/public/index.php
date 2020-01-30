@@ -1,5 +1,7 @@
 <?php
-
+// header("Access-Control-Allow-Origin: http://192.168.0.199:8081/");
+$domaine = 'http://192.168.0.199:8081/';
+header("Access-Control-Allow-Origin: $domaine"); 
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

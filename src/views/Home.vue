@@ -7,14 +7,13 @@
             <div class="row">
                 <div class="col-md-12 col-lg-7">
                     <ul class="list-inline social">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li class="list-inline-item"><a v-bind:href="posts.facebook_link"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a v-bind:href="posts.linkedin_link"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a v-bind:href="posts.instagram_link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a v-bind:href="posts.twiter_link"><i class="fa fa-twitter"></i></a></li>
                     </ul>
                     <div class="align-middle">
-                        <h1>I am Jonathan Doe</h1>
+                        <h1>{{posts.title_1}}</h1>
                         <p>i,m Jonathan, professional web developer with long time experience in this field​</p>
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="#portfolio">My Portfolio </a></li>
@@ -37,10 +36,34 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
-// export default {
+export default {
 //   name: 'home',
 //   components: {
 //     HelloWorld
 //   }
-// }
+
+data() {
+    return {
+      posts: [],
+      errors: []
+    }
+  },
+  mounted(){
+      this. getData();
+  },
+  methods:{
+        getData() {
+            axios.get('http://127.0.0.1:8000/api/home')
+            .then(response => {
+            // JSON responses are automatically parsed.
+            this.posts = response.data
+            // console.log(response.data);
+            })
+            .catch(e => {
+            this.errors.push(e)
+            })
+        }
+  }
+
+}
 </script>
