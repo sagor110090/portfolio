@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <section class="banner section-padding">
       <div class="container">
         <div class="row">
@@ -48,19 +46,11 @@
           </div>
           <div class="col-lg-5">
             <div class="about_me_image wow fadeInUp" data-wow-delay="0.2s">
-              <img
+              <image-loader
+                :src="'http://127.0.0.1:8000/storage/' + posts.image"
                 width="508px"
                 height="729px"
-                :src="'http://127.0.0.1:8000/storage/' + posts.image"
-                class="attachment-full size-full"
-                alt="about me image"
               />
-
-              <!-- <image-loader
-                :src="'http://127.0.0.1:8000/storage/' + posts.image"
-                width="508px"
-                height="729px"
-              /> -->
             </div>
           </div>
         </div>
@@ -88,7 +78,7 @@ export default {
   },
   mounted() {
     this.getData();
-    // this.myImage; = "http://127.0.0.1:8000/" + posts.image;
+    this.$Progress.start();
   },
   methods: {
     getData() {

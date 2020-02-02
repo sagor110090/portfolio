@@ -11,45 +11,46 @@
           </div>
         </div>
         <div class="row">
-          <div
-            class="col-lg-5 text-center wow fadeInLeft"
-            data-wow-delay="0.2s"
-          >
-            <img
-              src="@/assets/images/me-01-alt.png"
-              title="me-01"
-              alt="me-01"
-            />
+          <div class="col-lg-5 text-center wow fadeInLeft" data-wow-delay="0.2s">
+            <img src="@/assets/images/me-01-alt.png" title="me-01" alt="me-01" />
           </div>
           <div class="col-lg-7 my-auto wow fadeInRight" data-wow-delay="0.2s">
-            <h3><strong>Hi There</strong></h3>
+            <h3>
+              <strong>Hi There</strong>
+            </h3>
             <div class="about-me-description">
-              <p>
-                {{ posts.description }}
-              </p>
+              <p>{{ posts.description }}</p>
             </div>
             <div class="row">
               <div class="col-lg-6">
                 <div class="contact-info">
-                  <strong><span>Name:</span></strong>
+                  <strong>
+                    <span>Name:</span>
+                  </strong>
                   <p>{{ posts.name }}</p>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="contact-info">
-                  <strong><span>Email:</span></strong>
+                  <strong>
+                    <span>Email:</span>
+                  </strong>
                   <p>{{ posts.email }}</p>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="contact-info">
-                  <strong><span>Phone:</span></strong>
+                  <strong>
+                    <span>Phone:</span>
+                  </strong>
                   <p>{{ posts.phone }}</p>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="contact-info">
-                  <strong><span>LinkedIn:</span></strong>
+                  <strong>
+                    <span>LinkedIn:</span>
+                  </strong>
                   <p>{{ posts.linkedin }}</p>
                 </div>
               </div>
@@ -72,7 +73,7 @@ export default {
   },
   mounted() {
     this.getData();
-    // this.myImage; = "http://127.0.0.1:8000/" + posts.image;
+    this.$Progress.start();
   },
   methods: {
     getData() {

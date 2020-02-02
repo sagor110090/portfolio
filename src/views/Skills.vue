@@ -6,7 +6,10 @@
           <div class="col-lg-5 my-auto wow fadeInUp" data-wow-delay="0.2s">
             <div class="section-title mb-lg-0 mb-md-5" style="text-align: left">
               <span>i,m expert on</span>
-              <h2>Let,s Work Together<span></span></h2>
+              <h2>
+                Let,s Work Together
+                <span></span>
+              </h2>
               <p>
                 Phasellus accumsan scelerisque dolor, quis mattis justo bibendum
                 non. Nulla sollicitudin turpis in elementum varius. Vestibulum
@@ -14,16 +17,12 @@
                 cubilia Curae
               </p>
               <div style="text-align: left">
-                <a class="amike-btn bordered mt-3" href="#"> Hire Me Now</a>
+                <a class="amike-btn bordered mt-3" href="#">Hire Me Now</a>
               </div>
             </div>
           </div>
           <div class="col-lg-6 offset-lg-1 my-auto">
-            <div
-              class="skill wow fadeInUp"
-              v-for="post in posts"
-              data-wow-delay="0.2s"
-            >
+            <div class="skill wow fadeInUp" v-for="post in posts" data-wow-delay="0.2s">
               <p>{{ post.name }}</p>
               <div
                 class="skill-bar wow slideInLeft animated"
@@ -49,7 +48,7 @@
                         <div class="skill-bar wow slideInLeft animated" style="width: 90%">
                             <span class="skill-count">90%</span>
                         </div>
-                    </div> -->
+            </div>-->
           </div>
         </div>
       </div>
@@ -67,7 +66,7 @@ export default {
   },
   mounted() {
     this.getData();
-    // this.myImage; = "http://127.0.0.1:8000/" + posts.image;
+    this.$Progress.start();
   },
   methods: {
     getData() {

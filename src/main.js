@@ -9,8 +9,8 @@ Vue.use(VueImageLoader);
 window.VueImageLoader = VueImageLoader;
 import VueProgressBar from "vue-progressbar";
 
-import ImagePainter from "vue-image-painter";
-window.ImagePainter = ImagePainter;
+import { VLazyImagePlugin } from "v-lazy-image";
+Vue.use(VLazyImagePlugin);
 Vue.use(VueProgressBar, {
   color: "red",
   failedColor: "red",

@@ -4,7 +4,11 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a href="index.html" class="custom-logo-link" rel="home">
-            <img src="./assets/images/logo.png" class="custom-logo" alt="Amike" />
+            <img
+              src="./assets/images/logo.png"
+              class="custom-logo"
+              alt="Amike"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -19,19 +23,19 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul id="menu-primary" class="navbar-nav ml-auto">
-              <li class="nav-link" @click="start">
+              <li class="nav-link">
                 <router-link to="/">Home</router-link>
               </li>
-              <li class="nav-link" @click="start">
+              <li class="nav-link">
                 <router-link to="/about">About</router-link>
               </li>
-              <li class="nav-link" @click="start">
+              <li class="nav-link">
                 <router-link to="/skills">Skills</router-link>
               </li>
-              <li class="nav-link" @click="start">
+              <li class="nav-link">
                 <router-link to="/portfolio">Portfolio</router-link>
               </li>
-              <li class="nav-link" @click="start">
+              <li class="nav-link">
                 <router-link to="/contact">Contact</router-link>
               </li>
             </ul>
@@ -40,17 +44,22 @@
       </nav>
     </header>
     <vue-progress-bar></vue-progress-bar>
-
     <router-view />
   </div>
 </template>
 
 <script>
+import { BarLoader } from "@saeris/vue-spinners";
 export default {
+  components: {
+    BarLoader
+  },
+  mounted() {
+    this.start();
+  },
   methods: {
     start() {
       this.$Progress.start();
-      this.$Progress.finish();
     }
   }
 };
