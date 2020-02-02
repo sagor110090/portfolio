@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Home;
 use App\Contact;
 use App\About;
-use App\Skills;
+use App\Skill;
 use App\Category;
 use App\Project;
 use Illuminate\Http\Request;
@@ -25,6 +25,18 @@ class FrontEndController extends Controller
         $home = Home::first();
 
         return $home;
+    }
+    public function about(Request $request)
+    {
+        $about = About::first();
+
+        return $about;
+    }
+    public function skill(Request $request)
+    {
+        $skill = Skill::all();
+
+        return $skill;
     }
 
     /**

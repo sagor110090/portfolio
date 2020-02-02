@@ -17,3 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('home','Api\FrontEndController@home');
+Route::get('about','Api\FrontEndController@about');
+Route::get('skill','Api\FrontEndController@skill');

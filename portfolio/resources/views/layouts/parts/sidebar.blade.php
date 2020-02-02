@@ -93,7 +93,24 @@
             </ul>
           </div>
         </li>
-
+        <li class="sidebar-dropdown  {{ Request::is('*/skill*') ? 'active' : '' }}">
+          <a href="#">
+            <i class="fas fa-tasks"></i>
+            <span>Product Category</span>
+          </a>
+          <div class="sidebar-submenu" style=" {{ Request::is('*/skill*') ? 'display: block;' : '' }}">
+            <ul>
+              <li>
+                <a href="{{ url('/admin/skill/create') }}"
+                  style=" {{ Request::is('*/skill/create*') ? 'background: #212529;' : '' }}">Add skill</a>
+              </li>
+              <li>
+                <a href="{{ url('/admin/skill/') }}"
+                  style=" {{ Request::is('admin/skill') ? 'background: #212529;' : '' }}">skill List</a>
+              </li>
+            </ul>
+          </div>
+        </li>
         <li class="sidebar-dropdown  {{ Request::is('*/categories*') ? 'active' : '' }}">
           <a href="#">
             <i class="fas fa-tasks"></i>

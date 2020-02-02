@@ -21,10 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['middleware' => 'auth','namespace' => 'Admin','prefix' => 'admin'], function () {
+    Route::resource('skill', 'SkillController');
     Route::resource('categories', 'CategoriesController');
     Route::resource('projects', 'ProjectsController');
     Route::resource('pages/home', 'HomeController');
-    Route::resource('pages/skill', 'SkillController');
     Route::resource('pages/home', 'HomeController');
     Route::resource('pages/about', 'AboutController');
     Route::resource('pages/contact', 'ContactController');
